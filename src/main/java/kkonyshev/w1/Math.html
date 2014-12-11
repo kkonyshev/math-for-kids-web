@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+ 
+ 
+	<a href="ex/HomePage">HomePage</a> | <a href="ex/Example">Example</a> | Math
+	<br />
+	
+	<strong>Profiles</strong>
+	<br /> 
+	profile count: <span wicket:id="profileCount"/>
+	<br />
+	<select wicket:id="profileListId"></select>
+	<br />
+	<form wicket:id="profile">
+		<input wicket:id="name" type="text"/>
+		<input wicket:id="birthDate" type="text"/>
+		<input type="submit" value="submit" title="Save/Update"/>
+	</form>
+	<br />
+</body>
+</html>
