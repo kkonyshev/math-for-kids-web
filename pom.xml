@@ -8,7 +8,6 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- TODO project name  -->
-	<name>quickstart</name>
 	<description></description>
 
 	<!-- TODO
@@ -192,4 +191,10 @@
 		<jetty.version>6.1.4</jetty.version>
 	</properties>
 
+	<scm>
+		<url>https://github.com/kkonyshev/math-for-kids-web</url>
+		<developerConnection>kkonyshev</developerConnection>
+	</scm>
+	<url>https://github.com/kkonyshev/math-for-kids-web</url>
+	<name>wicket backend for math-for-kids-proto</name>
 </project>
