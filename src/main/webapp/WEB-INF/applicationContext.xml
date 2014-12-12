@@ -13,6 +13,24 @@
 		<constructor-arg value="yyyy-MM-dd" />
 	</bean>
 
+	<bean id="NumberStat1" class="mfk.domain.NumberStat">
+		<property name="profileId" value="1"/>
+		<property name="number" value="1"/>
+		<property name="count" value="1"/>
+	</bean>
+	
+	<bean id="NumberStat2" class="mfk.domain.NumberStat">
+		<property name="profileId" value="1"/>
+		<property name="number" value="2"/>
+		<property name="count" value="3"/>
+	</bean>
+	
+	<bean id="NumberStat3" class="mfk.domain.NumberStat">
+		<property name="profileId" value="1"/>
+		<property name="number" value="3"/>
+		<property name="count" value="2"/>
+	</bean>
+
 	<bean id="leoProfile" class="mfk.domain.Profile" scope="singleton">
 		<property name="id" value="1"/>
 		<property name="name" value="Konyshev Leo"/>
@@ -20,10 +38,6 @@
 			<bean factory-bean="dateFormat" factory-method="parse">
 					<constructor-arg value="2013-01-30"/>
 			</bean>
-		</property>
-		<property name="numberCount">
-			<list>
-			</list>
 		</property>
 	</bean>
 	
@@ -34,10 +48,6 @@
 			<bean factory-bean="dateFormat" factory-method="parse">
 					<constructor-arg value="1984-03-22"/>
 			</bean>
-		</property>
-		<property name="numberCount">
-			<list>
-			</list>
 		</property>
 	</bean>
 	
@@ -50,7 +60,16 @@
 		</property>
 	</bean>
 	
-	<bean id="numberStatDao" class="mfk.domain.NumberStatDaoMock" scope="singleton"/>
+	<bean id="numberStatDao" class="mfk.domain.NumberStatDaoMock" scope="singleton">
+		<property name="numberStatList">
+			<set>
+				<ref bean="NumberStat1"/>
+				<ref bean="NumberStat2"/>
+				<ref bean="NumberStat3"/>
+			</set>
+		</property>
+	</bean>
+
 	<bean id="profileService" class="mfk.domain.ProfileServiceImpl" scope="singleton"/>
 	
 </beans>
