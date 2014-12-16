@@ -1,0 +1,51 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+mainClassName = 'kkonyshev.w1.Start'
+
+jar {
+    group = 'kkonyshev'
+    baseName = 'math-for-kids-web'
+    version =  '0.0.2-SNAPSHOT'
+}
+
+allprojects {
+  apply plugin: 'maven'
+  group = 'kkonyshev'
+  version = '0.0.2-SNAPSHOT'
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 	"org.apache.wicket:wicket:1.4.23",
+		"org.apache.wicket:wicket-spring:1.4.23",
+		"org.springframework:spring-web:3.2.2.RELEASE",
+		"kkonyshev:math-for-kids:1.0.0-SNAPSHOT"
+
+    testCompile "junit:junit:4.8.2",
+		"org.springframework:spring-test:3.2.2.RELEASE"
+}
+
+test {
+    testLogging {
+        events 'started', 'passed'
+    }
+}
